@@ -1,6 +1,13 @@
 # Spring の filter 動作確認
 
-# 理解したこと
+## 試したこと
+
+- 適用順を意識して FilterRegistrationBean を適応する([FilterConfiguration](src/main/java/com/example/demo/config/FilterConfiguration.java))
+- SecurityFilterChain を複数 Bean 登録する([SpringSecurityFilterConfiguration](src/main/java/com/example/demo/config/SpringSecurityFilterConfiguration.java))
+    - SecurityFilterChain 配下の Filter として Filter を登録する
+- SecurityFilterChain の実行順を指定する([application.properties](src/main/resources/application.properties))
+
+## 理解したこと
 
 1. FilterRegistrationBean で登録した Filter は全体に適用する
     - setOrder メソッドで適応順を指定できる
