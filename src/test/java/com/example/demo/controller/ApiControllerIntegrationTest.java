@@ -7,26 +7,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import org.springframework.test.context.junit4.SpringRunner;
 
 @Slf4j
 @ExtendWith(SpringExtension.class)
-@SpringBootTest(webEnvironment= SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class ApiControllerIntegrationTest {
 
-    @Autowired
-    TestRestTemplate testRestTemplate;
+  @Autowired TestRestTemplate testRestTemplate;
 
-    @Test
-    void testCallHello1() {
-        var reponse = testRestTemplate.getForObject("/api1/hello1", String.class);
-        log.info("response: {}", reponse);
-    }
+  @Test
+  void testCallHello1() {
+    var reponse = testRestTemplate.getForObject("/api1/hello1", String.class);
+    log.info("response: {}", reponse);
+  }
 
-    @Test
-    void testCallHello2() {
-        var reponse = testRestTemplate.getForObject("/api2/hello2", String.class);
-        log.info("response: {}", reponse);
-    }
-
+  @Test
+  void testCallHello2() {
+    var reponse = testRestTemplate.getForObject("/api2/hello2", String.class);
+    log.info("response: {}", reponse);
+  }
 }

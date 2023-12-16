@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Api2Controller {
 
-    @GetMapping("/api2/hello2")
-    public String hello2() {
-       log.info("called Api2Controller.");
-       return "ok";
-    }
+  @GetMapping("/api2/hello2")
+  public String hello2() {
+    log.info("called Api2Controller.");
+    return "ok";
+  }
 }
